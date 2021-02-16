@@ -34,6 +34,7 @@ let svg = d3.select("body").append("svg")
 //     .y((d) => d.y);
 
 //SE DEFINE UNA LÍNEA CURVA DAOO LOS PUNTOS
+//SI SE FORMA UNA CURVA GENERA LOS MÁXIMOS Y MÍNIMOS DE LA CURVA
 let line = d3.line()
     .x((d) => d.point)
     .y((d, i) => (i + 1) * 50)
