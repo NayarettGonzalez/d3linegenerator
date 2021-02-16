@@ -14,8 +14,8 @@ let points = [
 
 //SE ESPECIFICAN COORDENADAS DE LOS PUNTOS
 let data = [
-    { x: 100, y: 100 }, { x: 130, y: 260 }, { x: 300, y: 160 }, { x: 500, y: 250 }
-    // { point: 100 }, { point: 150 }, { point: 80 }, { point: 220 }, { point: 130 }
+    // { x: 100, y: 100 }, { x: 130, y: 260 }, { x: 300, y: 160 }, { x: 500, y: 250 }
+    { point: 100 }, { point: 150 }, { point: 80 }, { point: 220 }, { point: 130 }
 ];
 let width = 600,
     height = 500;
@@ -29,14 +29,14 @@ let svg = d3.select("body").append("svg")
 // svg.append("path").attr("d", line(points));
 
 //SE DEFINE LÍNEA PARA PUNTOS DADAS LAS COORDENADAS
-let line = d3.line()
-    .x((d) => d.x)
-    .y((d) => d.y);
-
-//SE DEFINE UNA LÍNEA CURVA
 // let line = d3.line()
-//     .x((d) => d.point)
-//     .y((d, i) => (i + 1) * 50)
-//     .curve(d3.curveBundle);
+//     .x((d) => d.x)
+//     .y((d) => d.y);
+
+//SE DEFINE UNA LÍNEA CURVA DAOO LOS PUNTOS
+let line = d3.line()
+    .x((d) => d.point)
+    .y((d, i) => (i + 1) * 50)
+    .curve(d3.curveBundle);
 
 svg.append("path").attr("d", line(data));
